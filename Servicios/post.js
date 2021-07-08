@@ -1,11 +1,11 @@
 const router = require("./Routes")
 const fs = require('fs')
-const json = JSON.parse(fs.readFileSync(__dirname+"/names.json"))
 
 router.post('/', (req, res)=>{
-    json.data.push(req.body.name)
-    fs.writeFileSync("names.json", JSON.stringify(json));
+    let json = JSON.parse(fs.readFileSync(__dirname+"/products.json"))
+    fs.writeFileSync("products.json", JSON.stringify({ name: req.body.Nombre_Producto, price: req.body.Precio_Producto }));
     res.send("ok");
 });
+
 
 module.exports = router;

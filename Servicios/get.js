@@ -2,7 +2,7 @@ const router = require("./Routes")
 const fs = require('fs')
 
 router.get('/', (req, res)=>{
-    res.send(JSON.parse(fs.readFileSync(__dirname + '/names.json')));
+    res.send(JSON.parse(fs.readFileSync(__dirname + '/products.json')));
 })
 
 module.exports = router;
